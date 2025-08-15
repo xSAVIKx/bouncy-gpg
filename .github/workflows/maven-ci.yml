@@ -20,7 +20,7 @@ jobs:
       fail-fast: false
       matrix:
         java: [ 8, 11 ]
-        os: [ ubuntu-24.04, ubuntu-24.04-arm,  macos-13, macos-14 ]
+        os: [ ubuntu-24.04, ubuntu-24.04-arm,  macos-13 ]
 
     runs-on: ${{ matrix.os }}
     steps:
@@ -35,4 +35,4 @@ jobs:
           cache: 'maven'
 
       - name: Build with Maven (skip integration tests & quality checks)
-        run: ./mvnw -B -V -DskipITs -DskipQuality verify
+        run: ./mvnw -B -V -DskipITs=false -DskipQuality=false verify
