@@ -209,10 +209,8 @@
                     <includeTestSourceDirectory>false</includeTestSourceDirectory>
                     <failOnViolation>true</failOnViolation>
                     <consoleOutput>true</consoleOutput>
-                    <linkXref>false</linkXref>
                     <encoding>${project.build.sourceEncoding}</encoding>
                     <violationSeverity>warning</violationSeverity>
-                    <toolVersion>${checkstyle.tool.version}</toolVersion>
                     <skip>${skipQuality}</skip>
                 </configuration>
                 <executions>
@@ -224,6 +222,13 @@
                         </goals>
                     </execution>
                 </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.puppycrawl.tools</groupId>
+                        <artifactId>checkstyle</artifactId>
+                        <version>${checkstyle.tool.version}</version>
+                    </dependency>
+                </dependencies>
             </plugin>
 
             <plugin>
@@ -236,7 +241,6 @@
                     </rulesets>
                     <includeTests>false</includeTests>
                     <printFailingErrors>true</printFailingErrors>
-                    <linkXref>false</linkXref>
                     <skip>${skipQuality}</skip>
                 </configuration>
                 <executions>
