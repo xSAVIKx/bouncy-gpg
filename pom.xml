@@ -4,16 +4,17 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>name.neuhalfen.projects.crypto.bouncycastle.openpgp</groupId>
+    <groupId>io.github.xsavikx</groupId>
     <artifactId>bouncy-gpg</artifactId>
     <version>2.3.0</version>
     <packaging>jar</packaging>
 
     <name>bouncy-gpg</name>
     <description>Convenience library for using Bouncy Castle OpenPGP (PGP) with a fluent API</description>
-    <url>https://github.com/neuhalje/bouncy-gpg</url>
+    <url>https://github.com/xSAVIKx/bouncy-gpg</url>
 
     <properties>
+        <release>false</release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -25,6 +26,7 @@
         <pmd.plugin.version>3.17.0</pmd.plugin.version>
         <skipITs>true</skipITs>
         <skipQuality>true</skipQuality>
+        <javadoc.opts>-Xdoclint:none</javadoc.opts>
     </properties>
 
     <licenses>
@@ -35,15 +37,29 @@
         </license>
     </licenses>
 
-    <repositories>
-        <repository>
-            <id>jcenter</id>
-            <url>https://jcenter.bintray.com/</url>
-            <releases><enabled>true</enabled></releases>
-            <snapshots><enabled>false</enabled></snapshots>
-        </repository>
-    </repositories>
+    <scm>
+        <url>https://github.com/xSAVIKx/bouncy-gpg.git</url>
+        <connection>scm:git:${project.scm.url}</connection>
+        <developerConnection>scm:git:${project.scm.url}</developerConnection>
+    </scm>
+    <issueManagement>
+        <url>https://github.com/xSAVIKx/bouncy-gpg/issues</url>
+    </issueManagement>
 
+    <developers>
+        <developer>
+            <id>unverbraucht</id>
+            <name>Jens Neuhalfen</name>
+        </developer>
+        <developer>
+            <id>vanitasvitae</id>
+            <name>Paul Schaub</name>
+        </developer>
+        <developer>
+            <id>xSAVIKx</id>
+            <name>Yurii Serhiichuk</name>
+        </developer>
+    </developers>
     <dependencies>
         <!-- Main dependencies -->
         <dependency>
@@ -255,4 +271,181 @@
             </plugin>
         </plugins>
     </build>
+
+
+    <profiles>
+        <profile>
+            <id>github</id>
+            <activation>
+                <property>
+                    <name>publish</name>
+                    <value>github</value>
+                </property>
+            </activation>
+            <distributionManagement>
+                <repository>
+                    <id>github</id>
+                    <name>GitHub Packages</name>
+                    <url>https://maven.pkg.github.com/xSAVIKx/bouncy-gpg</url>
+                </repository>
+            </distributionManagement>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>3.3.1</version>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>3.11.3</version>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>3.2.8</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                                <configuration>
+                                    <gpgArguments>
+                                        <arg>--pinentry-mode</arg>
+                                        <arg>loopback</arg>
+                                    </gpgArguments>
+                                    <useAgent>false</useAgent>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>central</id>
+            <activation>
+                <property>
+                    <name>publish</name>
+                    <value>central</value>
+                </property>
+            </activation>
+            <distributionManagement>
+                <snapshotRepository>
+                    <id>central</id>
+                </snapshotRepository>
+                <repository>
+                    <id>central</id>
+                    <name>Central Repository OSSRH</name>
+                </repository>
+            </distributionManagement>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>3.3.1</version>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>3.11.3</version>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>3.2.8</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                                <configuration>
+                                    <gpgArguments>
+                                        <arg>--pinentry-mode</arg>
+                                        <arg>loopback</arg>
+                                    </gpgArguments>
+                                    <useAgent>false</useAgent>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.sonatype.central</groupId>
+                        <artifactId>central-publishing-maven-plugin</artifactId>
+                        <version>0.8.0</version>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <publishingServerId>central</publishingServerId>
+                            <autoPublish>true</autoPublish>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-enforcer-plugin</artifactId>
+                        <version>3.6.1</version>
+                        <executions>
+                            <execution>
+                                <id>enforce</id>
+                                <goals>
+                                    <goal>enforce</goal>
+                                </goals>
+                                <configuration>
+                                    <rules>
+                                        <CheckMavenCentral implementation="org.kordamp.maven.enforcer.checker.CheckMavenCentral">
+                                            <strict>false</strict>
+                                            <release>${release}</release>
+                                        </CheckMavenCentral>
+                                        <requireJavaVersion>
+                                            <version>${java.version}</version>
+                                        </requireJavaVersion>
+                                    </rules>
+                                </configuration>
+                            </execution>
+                        </executions>
+                        <dependencies>
+                            <dependency>
+                                <groupId>org.kordamp.maven</groupId>
+                                <artifactId>pomchecker-enforcer-rules</artifactId>
+                                <version>1.14.0</version>
+                            </dependency>
+                        </dependencies>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
