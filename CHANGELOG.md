@@ -1,5 +1,7 @@
 ## V 2.x.x (NEXT)
 
+## V 2.3.1 Tooling update
+
 * Enh: Upgrade tooling and migrate to GitHub Actions.
 * Enh: Migrate from Gradle to Maven.
 
