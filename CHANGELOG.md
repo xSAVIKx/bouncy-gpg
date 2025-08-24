@@ -1,5 +1,9 @@
 ## V 2.x.x (NEXT)
 
+## V 2.3.2 Tooling update
+
+* Enh: Bump Bouncy Castle to 1.70 - latest bcprov-jdk15on..
+
 ## V 2.3.1 Tooling update
 
 * Enh: Upgrade tooling and migrate to GitHub Actions.
