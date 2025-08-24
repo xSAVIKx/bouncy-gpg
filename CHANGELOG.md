@@ -1,6 +1,10 @@
 ## V 2.x.x (NEXT)
 
-## V 2.3.2 Tooling update
+## V 2.3.3 Bug Fixes
+
+* Fix: Fix #58 - NPE when decrypting non-encrypted data.
+
+## V 2.3.2 Bouncy Castle Update
 
 * Enh: Bump Bouncy Castle to 1.70 - latest bcprov-jdk15on..
 
