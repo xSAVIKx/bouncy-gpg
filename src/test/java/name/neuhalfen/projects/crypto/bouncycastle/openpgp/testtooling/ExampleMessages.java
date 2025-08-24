@@ -432,87 +432,87 @@ public class ExampleMessages {
   public final static long ONLY_MASTER_KEY_ID = 0xA3EE3A40BD8A546BL;
   public final static String ONLY_MASTER_KEY_UID = "no_subkeys@example.com";
   public final static String ONLY_MASTER_KEY_PASSPHRASE = "";
-  public final static String ONLY_MASTER_KEY_PUBKEY= "-----BEGIN PGP PUBLIC KEY BLOCK-----\n" +
-          "\n" +
-          "mQENBF4kHiwBCAC0S04cTmMh8lJ4E4yHK1WG5SsWW7ejXs8rsvSvbIhtd3yfajiv\n" +
-          "KVL8Pug+Ny64//rbPe60xUkpC7p9kg773iwhExrmn5IFZSkqJi51iDRTPTaRRgsp\n" +
-          "w2gGygqJNnMbc4/QDomzu5+o32jdxpNlrWcUn90yWdhc6DapujvErE5KF6pqxMQm\n" +
-          "VfWtQ+VlB3EA8KnggIHcwionBaYBd1kBUNCNUTkIFoxvK0YqFgOBRIQ17p2eyZC3\n" +
-          "d4h07e8HyfxYhcaAyON4uzXCED1N4TJ9lSxDN9XkxMhPPZHj6wcM1pW88RjNxZHP\n" +
-          "zT4L5GzbIA3QI0Emuk8w82YK9NX/ufoT6+INABEBAAG0Tk9ubHkgTWFzdGVya2V5\n" +
-          "LCBObyBTdWJrZXlzIChUaGlzIGtleSBoYXMgbm8gc3ViIGtleXMpIDxub19zdWJr\n" +
-          "ZXlzQGV4YW1wbGUuY29tPokBSwQTAQoANRYhBKYry3RWGuzwygbVLKPuOkC9ilRr\n" +
-          "BQJeJB4sAhsPCAsJCAcNDAsKBRUKCQgLAh4BAheAAAoJEKPuOkC9ilRrFRQH/1Uq\n" +
-          "6H1oWszXeZHp3uvYSzUWB7joy6dJu6KSHajtU4XIXMRNChr0ILDMhtt0bQt1Pm5i\n" +
-          "lbjNwv95vhuxK7pymDvRZpr/ijfJEs4gaX7W6qOUdH54sZokkLTgGEV/aD2NeiqK\n" +
-          "syI8GFzhfAygMSA/R6c82uHkb0SQu8Y471f6pIZsk+Zv47wzHTHvgBSDn90QzYok\n" +
-          "d/dhmqwM1jnq8QOXy2j4Lpfso6C8WoObh9Ujp9/jbqw+pK0DjssXepQQWb5MILEl\n" +
-          "l+gCh7fHWyfJMDQmzD7Fnv0FejP3UCjeRPR/l5O83wnnNjhCqLNqmUWsStui5t8x\n" +
-          "Mz9hY/sWCr8tZyelTdk=\n" +
-          "=QqJA\n" +
-          "-----END PGP PUBLIC KEY BLOCK-----\n";
-  public final static String ONLY_MASTER_KEY_PRIVKEY="-----BEGIN PGP PRIVATE KEY BLOCK-----\n" +
-          "\n" +
-          "lQOYBF4kHiwBCAC0S04cTmMh8lJ4E4yHK1WG5SsWW7ejXs8rsvSvbIhtd3yfajiv\n" +
-          "KVL8Pug+Ny64//rbPe60xUkpC7p9kg773iwhExrmn5IFZSkqJi51iDRTPTaRRgsp\n" +
-          "w2gGygqJNnMbc4/QDomzu5+o32jdxpNlrWcUn90yWdhc6DapujvErE5KF6pqxMQm\n" +
-          "VfWtQ+VlB3EA8KnggIHcwionBaYBd1kBUNCNUTkIFoxvK0YqFgOBRIQ17p2eyZC3\n" +
-          "d4h07e8HyfxYhcaAyON4uzXCED1N4TJ9lSxDN9XkxMhPPZHj6wcM1pW88RjNxZHP\n" +
-          "zT4L5GzbIA3QI0Emuk8w82YK9NX/ufoT6+INABEBAAEAB/0aPX+P1Roj0wM3tg3/\n" +
-          "j59cs7aSrs9KYr5062XQsP4mLdF12N2JI32QIuO68l3Fen7F2/ywU1UI4/ZvgjYr\n" +
-          "aDQ0rXV+gqjw9L6KA5FCyou7CwS0c2T6iMB3hH5bZrutZM4Ah60jpeILOlYmjlkz\n" +
-          "ijT00SjoxB9zs4RegtwMuCXo2HbVu7xWo/HwiszGZ+DAkckSod8nAPS6q8uQsHa/\n" +
-          "+yoqUHpYL/l8UKwbdWfqpu/ZJ0TroLmYRrTSWnMYnEQkowWzXHzLruDNaxD2l7A1\n" +
-          "W8xqR+VmjwLLQJ/YDBoLDU6NNTPq8q4VtTg6IAYK18dWfat/vRrWcpeaQ20tmFxa\n" +
-          "z3pNBADF2AR9gL0zlgvUFoiRFcOsDgRjHi7WxgkYQkvyMDk+BlpKW7DNk5Z8Al/+\n" +
-          "apk/cuFi5KfbgYcfp/c6g/SQp2aP4j7QErVF7lktnIS+2te2PEHgiZZCgIXLrmNP\n" +
-          "+iDHp+zVIPNJkFJUl3d9MxKyOsskcXuJo2ZJbqF52AlSbrVGtwQA6Uqnq+shDuiv\n" +
-          "4vfJsqEPA03WtS5G3AI4usB3Sm1OhFfjtPFPxerm7scqgl8smgJjg9kxqYSNNaTO\n" +
-          "HxCBYp0qx+gi0A4CPOafTGl1rURR7pF6UcKE3QuYdZx6MduSxdQk7t5XYp7QMwU3\n" +
-          "MN66aUXkMciZDULUIrKzHm78rGQrOVsD/jwkbIwlOdrK/INSmIZtMT42NPTIWOkA\n" +
-          "XMKl/UTE7LzZmQcXWaeFgowJWwuWuZpNayPCWG2wVEuqtf3X5+innNTsR0LwSoSP\n" +
-          "z7xsQc/Al9yhMo/URMnbMmziTKTPycgGW/SoeVlw0HslnXeWqcMuk9KevDXxshXV\n" +
-          "g/J5nZhOtleASvK0Tk9ubHkgTWFzdGVya2V5LCBObyBTdWJrZXlzIChUaGlzIGtl\n" +
-          "eSBoYXMgbm8gc3ViIGtleXMpIDxub19zdWJrZXlzQGV4YW1wbGUuY29tPokBSwQT\n" +
-          "AQoANRYhBKYry3RWGuzwygbVLKPuOkC9ilRrBQJeJB4sAhsPCAsJCAcNDAsKBRUK\n" +
-          "CQgLAh4BAheAAAoJEKPuOkC9ilRrFRQH/1Uq6H1oWszXeZHp3uvYSzUWB7joy6dJ\n" +
-          "u6KSHajtU4XIXMRNChr0ILDMhtt0bQt1Pm5ilbjNwv95vhuxK7pymDvRZpr/ijfJ\n" +
-          "Es4gaX7W6qOUdH54sZokkLTgGEV/aD2NeiqKsyI8GFzhfAygMSA/R6c82uHkb0SQ\n" +
-          "u8Y471f6pIZsk+Zv47wzHTHvgBSDn90QzYokd/dhmqwM1jnq8QOXy2j4Lpfso6C8\n" +
-          "WoObh9Ujp9/jbqw+pK0DjssXepQQWb5MILEll+gCh7fHWyfJMDQmzD7Fnv0FejP3\n" +
-          "UCjeRPR/l5O83wnnNjhCqLNqmUWsStui5t8xMz9hY/sWCr8tZyelTdk=\n" +
-          "=8wl4\n" +
-          "-----END PGP PRIVATE KEY BLOCK-----\n";
+  public final static String ONLY_MASTER_KEY_PUBKEY = "-----BEGIN PGP PUBLIC KEY BLOCK-----\n" +
+      "\n" +
+      "mQENBF4kHiwBCAC0S04cTmMh8lJ4E4yHK1WG5SsWW7ejXs8rsvSvbIhtd3yfajiv\n" +
+      "KVL8Pug+Ny64//rbPe60xUkpC7p9kg773iwhExrmn5IFZSkqJi51iDRTPTaRRgsp\n" +
+      "w2gGygqJNnMbc4/QDomzu5+o32jdxpNlrWcUn90yWdhc6DapujvErE5KF6pqxMQm\n" +
+      "VfWtQ+VlB3EA8KnggIHcwionBaYBd1kBUNCNUTkIFoxvK0YqFgOBRIQ17p2eyZC3\n" +
+      "d4h07e8HyfxYhcaAyON4uzXCED1N4TJ9lSxDN9XkxMhPPZHj6wcM1pW88RjNxZHP\n" +
+      "zT4L5GzbIA3QI0Emuk8w82YK9NX/ufoT6+INABEBAAG0Tk9ubHkgTWFzdGVya2V5\n" +
+      "LCBObyBTdWJrZXlzIChUaGlzIGtleSBoYXMgbm8gc3ViIGtleXMpIDxub19zdWJr\n" +
+      "ZXlzQGV4YW1wbGUuY29tPokBSwQTAQoANRYhBKYry3RWGuzwygbVLKPuOkC9ilRr\n" +
+      "BQJeJB4sAhsPCAsJCAcNDAsKBRUKCQgLAh4BAheAAAoJEKPuOkC9ilRrFRQH/1Uq\n" +
+      "6H1oWszXeZHp3uvYSzUWB7joy6dJu6KSHajtU4XIXMRNChr0ILDMhtt0bQt1Pm5i\n" +
+      "lbjNwv95vhuxK7pymDvRZpr/ijfJEs4gaX7W6qOUdH54sZokkLTgGEV/aD2NeiqK\n" +
+      "syI8GFzhfAygMSA/R6c82uHkb0SQu8Y471f6pIZsk+Zv47wzHTHvgBSDn90QzYok\n" +
+      "d/dhmqwM1jnq8QOXy2j4Lpfso6C8WoObh9Ujp9/jbqw+pK0DjssXepQQWb5MILEl\n" +
+      "l+gCh7fHWyfJMDQmzD7Fnv0FejP3UCjeRPR/l5O83wnnNjhCqLNqmUWsStui5t8x\n" +
+      "Mz9hY/sWCr8tZyelTdk=\n" +
+      "=QqJA\n" +
+      "-----END PGP PUBLIC KEY BLOCK-----\n";
+  public final static String ONLY_MASTER_KEY_PRIVKEY = "-----BEGIN PGP PRIVATE KEY BLOCK-----\n" +
+      "\n" +
+      "lQOYBF4kHiwBCAC0S04cTmMh8lJ4E4yHK1WG5SsWW7ejXs8rsvSvbIhtd3yfajiv\n" +
+      "KVL8Pug+Ny64//rbPe60xUkpC7p9kg773iwhExrmn5IFZSkqJi51iDRTPTaRRgsp\n" +
+      "w2gGygqJNnMbc4/QDomzu5+o32jdxpNlrWcUn90yWdhc6DapujvErE5KF6pqxMQm\n" +
+      "VfWtQ+VlB3EA8KnggIHcwionBaYBd1kBUNCNUTkIFoxvK0YqFgOBRIQ17p2eyZC3\n" +
+      "d4h07e8HyfxYhcaAyON4uzXCED1N4TJ9lSxDN9XkxMhPPZHj6wcM1pW88RjNxZHP\n" +
+      "zT4L5GzbIA3QI0Emuk8w82YK9NX/ufoT6+INABEBAAEAB/0aPX+P1Roj0wM3tg3/\n" +
+      "j59cs7aSrs9KYr5062XQsP4mLdF12N2JI32QIuO68l3Fen7F2/ywU1UI4/ZvgjYr\n" +
+      "aDQ0rXV+gqjw9L6KA5FCyou7CwS0c2T6iMB3hH5bZrutZM4Ah60jpeILOlYmjlkz\n" +
+      "ijT00SjoxB9zs4RegtwMuCXo2HbVu7xWo/HwiszGZ+DAkckSod8nAPS6q8uQsHa/\n" +
+      "+yoqUHpYL/l8UKwbdWfqpu/ZJ0TroLmYRrTSWnMYnEQkowWzXHzLruDNaxD2l7A1\n" +
+      "W8xqR+VmjwLLQJ/YDBoLDU6NNTPq8q4VtTg6IAYK18dWfat/vRrWcpeaQ20tmFxa\n" +
+      "z3pNBADF2AR9gL0zlgvUFoiRFcOsDgRjHi7WxgkYQkvyMDk+BlpKW7DNk5Z8Al/+\n" +
+      "apk/cuFi5KfbgYcfp/c6g/SQp2aP4j7QErVF7lktnIS+2te2PEHgiZZCgIXLrmNP\n" +
+      "+iDHp+zVIPNJkFJUl3d9MxKyOsskcXuJo2ZJbqF52AlSbrVGtwQA6Uqnq+shDuiv\n" +
+      "4vfJsqEPA03WtS5G3AI4usB3Sm1OhFfjtPFPxerm7scqgl8smgJjg9kxqYSNNaTO\n" +
+      "HxCBYp0qx+gi0A4CPOafTGl1rURR7pF6UcKE3QuYdZx6MduSxdQk7t5XYp7QMwU3\n" +
+      "MN66aUXkMciZDULUIrKzHm78rGQrOVsD/jwkbIwlOdrK/INSmIZtMT42NPTIWOkA\n" +
+      "XMKl/UTE7LzZmQcXWaeFgowJWwuWuZpNayPCWG2wVEuqtf3X5+innNTsR0LwSoSP\n" +
+      "z7xsQc/Al9yhMo/URMnbMmziTKTPycgGW/SoeVlw0HslnXeWqcMuk9KevDXxshXV\n" +
+      "g/J5nZhOtleASvK0Tk9ubHkgTWFzdGVya2V5LCBObyBTdWJrZXlzIChUaGlzIGtl\n" +
+      "eSBoYXMgbm8gc3ViIGtleXMpIDxub19zdWJrZXlzQGV4YW1wbGUuY29tPokBSwQT\n" +
+      "AQoANRYhBKYry3RWGuzwygbVLKPuOkC9ilRrBQJeJB4sAhsPCAsJCAcNDAsKBRUK\n" +
+      "CQgLAh4BAheAAAoJEKPuOkC9ilRrFRQH/1Uq6H1oWszXeZHp3uvYSzUWB7joy6dJ\n" +
+      "u6KSHajtU4XIXMRNChr0ILDMhtt0bQt1Pm5ilbjNwv95vhuxK7pymDvRZpr/ijfJ\n" +
+      "Es4gaX7W6qOUdH54sZokkLTgGEV/aD2NeiqKsyI8GFzhfAygMSA/R6c82uHkb0SQ\n" +
+      "u8Y471f6pIZsk+Zv47wzHTHvgBSDn90QzYokd/dhmqwM1jnq8QOXy2j4Lpfso6C8\n" +
+      "WoObh9Ujp9/jbqw+pK0DjssXepQQWb5MILEll+gCh7fHWyfJMDQmzD7Fnv0FejP3\n" +
+      "UCjeRPR/l5O83wnnNjhCqLNqmUWsStui5t8xMz9hY/sWCr8tZyelTdk=\n" +
+      "=8wl4\n" +
+      "-----END PGP PRIVATE KEY BLOCK-----\n";
 
   public final static long ONLY_MASTER_KEY_ID_NO_KEY_FLAGS = 0x9E698FBA9F857349L;
   public final static String ONLY_MASTER_KEY_UID_NO_KEY_FLAGS = "support@anzgcis.com";
   public final static Instant ONLY_MASTER_KEY_EXPIRY_DATE = Instant.parse("2028-08-06T00:00:00Z");
 
   public final static String ONLY_MASTER_KEY_PASSPHRASE_NO_KEY_FLAGS = "";
-  public final static String ONLY_MASTER_KEY_PUBKEY_NO_KEY_FLAGS= "-----BEGIN PGP PUBLIC KEY BLOCK-----\n" +
-          "Version: SecureBlackbox 15\n" +
-          "\n" +
-          "xsBNBFtrhAABCACbJgPWFmodLq0cqIwiZG8hnHusSBA1nan8OQk2Dr+l37smSjO7\n" +
-          "TT0N/G8er79lgVyynYXXHH7EfY7tvvWPS5N55NvYiLxRYRPgFgy+cD6TsSn8W0qD\n" +
-          "zwCf5Jw5ZeU4pdRo6hN1Qgl6IcETQWZOsob3BWmg2aLnl+1SyY3zh0jW6z6Wn4En\n" +
-          "tpPj4iELe6o1SNcmC2A2fIVUoMlBHa+Mcumw+kqv4vsA6xJmpDYniBaW/asVaIBl\n" +
-          "4bA0Iux5Osr83pNJOBHpLk9ozyMF0rtqyyvA8l3SiLA2jyeXoBEQ9mEJi+G0/PBI\n" +
-          "mAoMs3FXlu4Dqdh6jk0vHDk261tMq8wqas7nABEBAAHCwGIEHwEIABYFCRLMAwAF\n" +
-          "AltreqYJEJ5pj7qfhXNJAACwjQgAktbLedTzTJmRgdgQsH3uakoFmi7Pc2Q/N9J7\n" +
-          "q8wJhBcxUUILQQck9fmzM4XOgAJmX0Sn+3xnkUvdnSP8EGd5SPezoDo29Udrm99z\n" +
-          "LV//9N5p4febzQwAhQJg3rGz5oDt5VMwTdSxhxPAKvkIV1QAQFqeZn6wO26Voz3h\n" +
-          "wfLt3xX904pomtCeakdRu+akqTBKS28Q6atHauHAAzlr1cfjLcLHdqI1y1zUbAyE\n" +
-          "dmYhpiIM3sr1ZvjaSRQv+vF/l5z88EVE5Ag4U5Mdw8X7R9WCnEk5ojOOveNYIsq2\n" +
-          "rjh9rAvD6aNBK4v+1wx9P1zSv227SojxX+AB103GSYitBSLTUs0oRmlsZWFjdGl2\n" +
-          "ZSBTdXBwb3J0IDxzdXBwb3J0QGFuemdjaXMuY29tPsLAXwQQAQgAEwUCW2wHRgIZ\n" +
-          "AQkQnmmPup+Fc0kAAGN8CACR82NV7nMGOm/crnu7k2dCHCoiTsucerG1tDFyCNYx\n" +
-          "3w0WATvSBS6XRwLfl6IaVbjpauZk+bH6NVgo9tpwKwGn7Wh9takHMsuRPoNiudqf\n" +
-          "S/duYt/ugOhlajfe3EFuGlt62j8pVT5o9bgCZQNEUgkGzwwz+j/saWHsI9fW26Ri\n" +
-          "W/tyJk0IICLf2aEJOi63PsllRQ+CtimvZkRalvcCuS19JNcYZlz3GyM/+z3LiYMi\n" +
-          "b1s+vDO4ZJgka+nTWHL1VrbctH79n23hmV1pK7LXAl8mZlo0wUU+R+01WumSVSQZ\n" +
-          "XGs5vAe6nG216ghBcNNd0UbQMZXwuIQlOtN5CSwoHdp6\n" +
-          "=qWOE\n" +
-          "-----END PGP PUBLIC KEY BLOCK-----\n";
+  public final static String ONLY_MASTER_KEY_PUBKEY_NO_KEY_FLAGS = "-----BEGIN PGP PUBLIC KEY BLOCK-----\n" +
+      "Version: SecureBlackbox 15\n" +
+      "\n" +
+      "xsBNBFtrhAABCACbJgPWFmodLq0cqIwiZG8hnHusSBA1nan8OQk2Dr+l37smSjO7\n" +
+      "TT0N/G8er79lgVyynYXXHH7EfY7tvvWPS5N55NvYiLxRYRPgFgy+cD6TsSn8W0qD\n" +
+      "zwCf5Jw5ZeU4pdRo6hN1Qgl6IcETQWZOsob3BWmg2aLnl+1SyY3zh0jW6z6Wn4En\n" +
+      "tpPj4iELe6o1SNcmC2A2fIVUoMlBHa+Mcumw+kqv4vsA6xJmpDYniBaW/asVaIBl\n" +
+      "4bA0Iux5Osr83pNJOBHpLk9ozyMF0rtqyyvA8l3SiLA2jyeXoBEQ9mEJi+G0/PBI\n" +
+      "mAoMs3FXlu4Dqdh6jk0vHDk261tMq8wqas7nABEBAAHCwGIEHwEIABYFCRLMAwAF\n" +
+      "AltreqYJEJ5pj7qfhXNJAACwjQgAktbLedTzTJmRgdgQsH3uakoFmi7Pc2Q/N9J7\n" +
+      "q8wJhBcxUUILQQck9fmzM4XOgAJmX0Sn+3xnkUvdnSP8EGd5SPezoDo29Udrm99z\n" +
+      "LV//9N5p4febzQwAhQJg3rGz5oDt5VMwTdSxhxPAKvkIV1QAQFqeZn6wO26Voz3h\n" +
+      "wfLt3xX904pomtCeakdRu+akqTBKS28Q6atHauHAAzlr1cfjLcLHdqI1y1zUbAyE\n" +
+      "dmYhpiIM3sr1ZvjaSRQv+vF/l5z88EVE5Ag4U5Mdw8X7R9WCnEk5ojOOveNYIsq2\n" +
+      "rjh9rAvD6aNBK4v+1wx9P1zSv227SojxX+AB103GSYitBSLTUs0oRmlsZWFjdGl2\n" +
+      "ZSBTdXBwb3J0IDxzdXBwb3J0QGFuemdjaXMuY29tPsLAXwQQAQgAEwUCW2wHRgIZ\n" +
+      "AQkQnmmPup+Fc0kAAGN8CACR82NV7nMGOm/crnu7k2dCHCoiTsucerG1tDFyCNYx\n" +
+      "3w0WATvSBS6XRwLfl6IaVbjpauZk+bH6NVgo9tpwKwGn7Wh9takHMsuRPoNiudqf\n" +
+      "S/duYt/ugOhlajfe3EFuGlt62j8pVT5o9bgCZQNEUgkGzwwz+j/saWHsI9fW26Ri\n" +
+      "W/tyJk0IICLf2aEJOi63PsllRQ+CtimvZkRalvcCuS19JNcYZlz3GyM/+z3LiYMi\n" +
+      "b1s+vDO4ZJgka+nTWHL1VrbctH79n23hmV1pK7LXAl8mZlo0wUU+R+01WumSVSQZ\n" +
+      "XGs5vAe6nG216ghBcNNd0UbQMZXwuIQlOtN5CSwoHdp6\n" +
+      "=qWOE\n" +
+      "-----END PGP PUBLIC KEY BLOCK-----\n";
 
   public final static Map<Long, char[]> ALL_KEYRINGS_PASSWORDS = BUILD_ALL_KEYRINGS_PASSWORDS();
   /**
@@ -714,6 +714,27 @@ public class ExampleMessages {
           "znd5CR+Jye1UXfLusnylrlfgKZcCRA==\n" +
           "=q3RN\n" +
           "-----END PGP MESSAGE-----";
+
+  /**
+   * Encrypted-To:    recipient@example.com Signed-By:       not encrypted but signed Compressed:      no
+   */
+  public final static String IMPORTANT_QUOTE_NOT_ENCRYPTED_BUT_SIGNED =
+      "-----BEGIN PGP MESSAGE-----\n" +
+          "Version: Keybase OpenPGP v2.0.76\n" +
+          "Comment: https://keybase.io/crypto\n" +
+          "\n" +
+          "yMDRAnicO8LLzMDFGLL4trl/RdV2xtNRpQyp+TWTPRVy8stSFVJSE1NyMvNSi/UU\n" +
+          "gCKZ2akKJRmpCuUZ+fnFGZl56QrF+aV5KSCxSoXcRKBsYjGEk5ZTqZBUqafgkl+a\n" +
+          "ngMUdExJzC0+dCCGhYGRi4GNlQlkBQMXpwDM3ikLORjazieoXLSXYeKoN/rn9qKQ\n" +
+          "3/58UNEr+9kXngh2W8knW9ke99/nIB5z4t4l23snT1r7ME2bbfJsbaWoL+fEh9Ws\n" +
+          "BXWrH9Y/Px9f6Zv7ZWftgXk7TNdWJcm2OWSKMLr8Oz/rhRvn1y3zn5tVy6+RjWed\n" +
+          "u74w7taaGyf8mHYpC7UzS6TVqiiIv72jv0bg/3/z6T8+/ty57eH26XtrJ8Zfld/w\n" +
+          "dMYmFuY7k/eKb/JcNzPW7fLa3r4naXuDre/1mx4SmF++cmr3hUl6x9Q7PmzwP/75\n" +
+          "hMysoIvfc/seZW9OZJsW2lB56/+ed5OKpqzb2/KVvbRa71LNLGWpIHXTlJrWp7qs\n" +
+          "YU/nvsrk+xQWcdbD7qQdABDtsOc=\n" +
+          "=5J9M\n" +
+          "-----END PGP MESSAGE-----\n";
+
   /**
    * Encrypted-To:    sender@example.com Signed-By:       not signed Compressed:      no
    */
@@ -772,5 +793,4 @@ public class ExampleMessages {
     m.put(ExampleMessages.ONLY_MASTER_KEY_ID_NO_KEY_FLAGS, null);
     return Collections.unmodifiableMap(m);
   }
-
 }

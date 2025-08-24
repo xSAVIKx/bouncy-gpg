@@ -1,11 +1,12 @@
 package name.neuhalfen.projects.crypto.bouncycastle.openpgp.decrypting;
 
+import org.bouncycastle.openpgp.PGPException;
+import org.bouncycastle.openpgp.PGPPublicKeyEncryptedData;
+
+import javax.annotation.Nonnull;
 import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import javax.annotation.Nonnull;
-import org.bouncycastle.openpgp.PGPException;
-import org.bouncycastle.openpgp.PGPPublicKeyEncryptedData;
 
 @SuppressWarnings("PMD.ShortVariable")
 final class MDCValidatingInputStream extends FilterInputStream {
@@ -57,10 +58,14 @@ final class MDCValidatingInputStream extends FilterInputStream {
 
   /**
    * Checks MDC if present.
+   * If stream is not encrypted, returns directly
    *
    * @throws IOException Error while reading input stream or if MDC fails
    */
   private void validateMDC() throws IOException {
+    if (pbe == null) {
+      return;
+    }
     try {
       if (pbe.isIntegrityProtected()) {
         if (!pbe.verify()) {
