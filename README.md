@@ -415,14 +415,18 @@ final InputStream decryptedPlaintextStream = BouncyGPG
 Building
 =======
 
-The project is a basic gradle build. All the scripts use `./gradlew  installDist`
+Project uses Maven as a build tool. Run `./mvnw clean install` to build the project.
 
-The coverage report (incl. running tests) is generated with `./gradlew check`.
+Use `-DskipITs=true` to skip the integration tests.
 
-Publish to jcenter
+Use `-DskipQuality=true` to skip the quality checks.
+
+Publish to GitHub and Maven Central
 --------------------
 
-`./gradlew bintrayUpload`
+`mvn clean --batch-mode -P default,github -Dpublish=github deploy`
+
+`mvn clean --batch-mode -P default,central -Dpublish=central deploy`
 
 CAVE
 =====
@@ -434,4 +438,3 @@ CAVE
 ## LICENSE
 
 This code is placed under the Apache License 2.0. Don't forget to adhere to the BouncyCastle License (http://bouncycastle.org/license.html).
-
