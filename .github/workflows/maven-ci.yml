@@ -34,5 +34,9 @@ jobs:
           java-version: ${{ matrix.java }}
           cache: 'maven'
 
-      - name: Build with Maven (skip integration tests & quality checks)
-        run: ./mvnw -B -V -DskipITs=false -DskipQuality=false verify
+      - name: Build and test
+        run: ./mvnw -B -V -DskipITs=false -DskipQuality=true verify
+
+      - name: Quality checks
+        continue-on-error: true
+        run: ./mvnw -B -V -DskipITs=true -DskipQuality=false verify
