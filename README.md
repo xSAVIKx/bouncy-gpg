@@ -1,6 +1,6 @@
 **Looking for contributors**: *_It's boring to work alone_ - If you are interested in contributing to an open source project please open an issue to discuss your ideas or create a PR*
 
-[![Build Status](https://travis-ci.org/neuhalje/bouncy-gpg.svg?branch=master)](https://travis-ci.org/neuhalje/bouncy-gpg)
+[![Build Status](https://github.com/neuhalje/bouncy-gpg/actions/workflows/ci.yaml/badge.svg)](https://github.com/neuhalje/bouncy-gpg/actions/workflows/ci.yaml)
 [![codecov](https://codecov.io/gh/neuhalje/bouncy-gpg/branch/master/graph/badge.svg)](https://codecov.io/gh/neuhalje/bouncy-gpg)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/86c099743f8b484c8da833495d7dc209)](https://www.codacy.com/app/neuhalje/bouncy-gpg?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=neuhalje/bouncy-gpg&amp;utm_campaign=Badge_Grade)
 [![license](https://img.shields.io/badge/license-APACHE%202.0-brightgreen.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
@@ -415,14 +415,18 @@ final InputStream decryptedPlaintextStream = BouncyGPG
 Building
 =======
 
-The project is a basic gradle build. All the scripts use `./gradlew  installDist`
+Project uses Maven as a build tool. Run `./mvnw clean install` to build the project.
 
-The coverage report (incl. running tests) is generated with `./gradlew check`.
+Use `-DskipITs=true` to skip the integration tests.
 
-Publish to jcenter
+Use `-DskipQuality=true` to skip the quality checks.
+
+Publish to GitHub and Maven Central
 --------------------
 
-`./gradlew bintrayUpload`
+`mvn clean --batch-mode -P default,github -Dpublish=github deploy`
+
+`mvn clean --batch-mode -P default,central -Dpublish=central deploy`
 
 CAVE
 =====
@@ -434,4 +438,3 @@ CAVE
 ## LICENSE
 
 This code is placed under the Apache License 2.0. Don't forget to adhere to the BouncyCastle License (http://bouncycastle.org/license.html).
-
