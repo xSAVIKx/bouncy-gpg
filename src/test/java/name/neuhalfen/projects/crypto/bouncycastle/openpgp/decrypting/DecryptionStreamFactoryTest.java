@@ -63,8 +63,9 @@ public class DecryptionStreamFactoryTest {
         .create(config, SignatureValidationStrategies.ignoreSignatures());
 
     InputStream in = spy(
-        new ByteArrayInputStream(IMPORTANT_QUOTE_SIGNED_COMPRESSED.getBytes(
-            StandardCharsets.US_ASCII))
+        new ByteArrayInputStream(
+            IMPORTANT_QUOTE_SIGNED_COMPRESSED.getBytes(StandardCharsets.US_ASCII)
+        )
     );
 
     final InputStream decryptAndVerify = sut.wrapWithDecryptAndVerify(in);

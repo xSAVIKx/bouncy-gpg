@@ -108,6 +108,12 @@
             <version>1.5.18</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.concordion</groupId>
+            <artifactId>concordion</artifactId>
+            <version>4.0.1</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
