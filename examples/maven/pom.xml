@@ -12,7 +12,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <bouncycastle.version>1.70</bouncycastle.version>
-    <slf4j.version>2.0.13</slf4j.version>
+    <!-- slf4j 2.0.13 flows in transitively via logback-classic; no direct dependency needed -->
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
