@@ -20,7 +20,10 @@ jobs:
       fail-fast: false
       matrix:
         java: [ 8, 11 ]
-        os: [ ubuntu-24.04, ubuntu-24.04-arm,  macos-15, macos-15-intel ]
+        os: [ ubuntu-24.04, ubuntu-24.04-arm,  macos-26, macos-26-intel ]
+        exclude:
+          - java: 8
+            os: macos-26
 
     runs-on: ${{ matrix.os }}
     steps:
