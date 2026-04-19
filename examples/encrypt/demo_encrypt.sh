@@ -1,27 +1,8 @@
 #!/usr/bin/env bash
-
-ASSEMBLY=bouncy-gpg-example-encryption-1.0.0
-LOCATION=./build
-
-[ -f ./build/libs/${ASSEMBLY}.jar ] ||  ./gradlew installDist
-
-if [ "x$2" == "x" ]
-then
-  echo "$0  sourceFile destFile"
-else
-
-#CP=${LOCATION}/libs/${ASSEMBLY}.jar
-for JAR in ${LOCATION}/install/bouncy-gpg-example-encryption/lib/*.jar
-do
-   CP=${CP}:${JAR}
-done
-
-java -cp ${CP} \
-   name.neuhalfen.projects.crypto.bouncycastle.openpgp.example.EncryptMain \
-   sender@example.com \
-   recipient@example.com \
-   ../../src/test/resources/sender.gpg.d/pubring.gpg  \
-   ../../src/test/resources/sender.gpg.d/secring.gpg sender \
-   "$1" "$2"
+# Usage: ./demo_encrypt.sh sourceFile destFile
+if [ "x$2" = "x" ]; then
+  echo "Usage: $0 sourceFile destFile"
+  exit 1
 fi
-
+# NOTE: sourceFile and destFile paths must not contain spaces
+mvn exec:java -Dexec.args="recipient@example.com recipient@example.com src/test/resources/keys/recipient.gpg.d/pubring.gpg src/test/resources/keys/recipient.gpg.d/secring.gpg recipient $1 $2"

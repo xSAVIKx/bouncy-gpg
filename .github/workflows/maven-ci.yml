@@ -43,3 +43,132 @@ jobs:
       - name: Quality checks
         continue-on-error: true
         run: ./mvnw -B -V -DskipITs=true -DskipQuality=false verify
+
+  examples-local:
+    name: Examples (local install)
+    needs: build
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Set up JDK 11
+        uses: actions/setup-java@v5
+        with:
+          distribution: 'temurin'
+          java-version: '11'
+          cache: 'maven'
+
+      - name: Install library to local Maven repo
+        run: ./mvnw -B -DskipTests -DskipITs=true -DskipQuality=true install
+
+      - name: Run maven example
+        working-directory: examples/maven
+        run: mvn compile exec:java
+
+      - name: Run encrypt example
+        working-directory: examples/encrypt
+        run: |
+          echo "Hello bouncy-gpg" > /tmp/hello.txt
+          zip -j /tmp/test.zip /etc/hostname
+          mvn compile exec:java -Dexec.args="recipient@example.com recipient@example.com src/test/resources/keys/recipient.gpg.d/pubring.gpg src/test/resources/keys/recipient.gpg.d/secring.gpg recipient /tmp/hello.txt /tmp/hello.txt.gpg"
+          mvn compile exec:java -Dexec.args="recipient@example.com recipient@example.com src/test/resources/keys/recipient.gpg.d/pubring.gpg src/test/resources/keys/recipient.gpg.d/secring.gpg recipient /tmp/test.zip /tmp/test.zip.gpg"
+
+      - name: Run decrypt example
+        working-directory: examples/decrypt
+        run: |
+          mvn compile exec:java -Dexec.args="src/test/resources/keys/recipient.gpg.d/pubring.gpg src/test/resources/keys/recipient.gpg.d/secring.gpg recipient /tmp/hello.txt.gpg /tmp/hello-decrypted.txt"
+          grep -q "Hello bouncy-gpg" /tmp/hello-decrypted.txt
+
+      - name: Run reencrypt example
+        working-directory: examples/reencrypt
+        run: |
+          mkdir -p /tmp/reencrypt-out
+          mvn compile exec:java -Dexec.args="recipient@example.com recipient@example.com src/test/resources/keys/recipient.gpg.d/pubring.gpg src/test/resources/keys/recipient.gpg.d/secring.gpg recipient /tmp/test.zip.gpg /tmp/reencrypt-out"
+          ls /tmp/reencrypt-out/*.gpg
+
+  examples-central:
+    name: Examples (Maven Central)
+    needs: build
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Set up JDK 11
+        uses: actions/setup-java@v5
+        with:
+          distribution: 'temurin'
+          java-version: '11'
+
+      - name: Run maven example
+        working-directory: examples/maven
+        run: mvn -P central compile exec:java
+
+      - name: Run encrypt example
+        working-directory: examples/encrypt
+        run: |
+          echo "Hello bouncy-gpg" > /tmp/hello.txt
+          zip -j /tmp/test.zip /etc/hostname
+          mvn -P central compile exec:java -Dexec.args="recipient@example.com recipient@example.com src/test/resources/keys/recipient.gpg.d/pubring.gpg src/test/resources/keys/recipient.gpg.d/secring.gpg recipient /tmp/hello.txt /tmp/hello.txt.gpg"
+          mvn -P central compile exec:java -Dexec.args="recipient@example.com recipient@example.com src/test/resources/keys/recipient.gpg.d/pubring.gpg src/test/resources/keys/recipient.gpg.d/secring.gpg recipient /tmp/test.zip /tmp/test.zip.gpg"
+
+      - name: Run decrypt example
+        working-directory: examples/decrypt
+        run: |
+          mvn -P central compile exec:java -Dexec.args="src/test/resources/keys/recipient.gpg.d/pubring.gpg src/test/resources/keys/recipient.gpg.d/secring.gpg recipient /tmp/hello.txt.gpg /tmp/hello-decrypted.txt"
+          grep -q "Hello bouncy-gpg" /tmp/hello-decrypted.txt
+
+      - name: Run reencrypt example
+        working-directory: examples/reencrypt
+        run: |
+          mkdir -p /tmp/reencrypt-out
+          mvn -P central compile exec:java -Dexec.args="recipient@example.com recipient@example.com src/test/resources/keys/recipient.gpg.d/pubring.gpg src/test/resources/keys/recipient.gpg.d/secring.gpg recipient /tmp/test.zip.gpg /tmp/reencrypt-out"
+          ls /tmp/reencrypt-out/*.gpg
+
+  examples-github:
+    name: Examples (GitHub Packages)
+    needs: build
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Set up JDK 11
+        uses: actions/setup-java@v5
+        with:
+          distribution: 'temurin'
+          java-version: '11'
+
+      - name: Run maven example
+        working-directory: examples/maven
+        run: mvn -P github --settings $GITHUB_WORKSPACE/.github/maven-settings.xml compile exec:java
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run encrypt example
+        working-directory: examples/encrypt
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "Hello bouncy-gpg" > /tmp/hello.txt
+          zip -j /tmp/test.zip /etc/hostname
+          mvn -P github --settings $GITHUB_WORKSPACE/.github/maven-settings.xml compile exec:java -Dexec.args="recipient@example.com recipient@example.com src/test/resources/keys/recipient.gpg.d/pubring.gpg src/test/resources/keys/recipient.gpg.d/secring.gpg recipient /tmp/hello.txt /tmp/hello.txt.gpg"
+          mvn -P github --settings $GITHUB_WORKSPACE/.github/maven-settings.xml compile exec:java -Dexec.args="recipient@example.com recipient@example.com src/test/resources/keys/recipient.gpg.d/pubring.gpg src/test/resources/keys/recipient.gpg.d/secring.gpg recipient /tmp/test.zip /tmp/test.zip.gpg"
+
+      - name: Run decrypt example
+        working-directory: examples/decrypt
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mvn -P github --settings $GITHUB_WORKSPACE/.github/maven-settings.xml compile exec:java -Dexec.args="src/test/resources/keys/recipient.gpg.d/pubring.gpg src/test/resources/keys/recipient.gpg.d/secring.gpg recipient /tmp/hello.txt.gpg /tmp/hello-decrypted.txt"
+          grep -q "Hello bouncy-gpg" /tmp/hello-decrypted.txt
+
+      - name: Run reencrypt example
+        working-directory: examples/reencrypt
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p /tmp/reencrypt-out
+          mvn -P github --settings $GITHUB_WORKSPACE/.github/maven-settings.xml compile exec:java -Dexec.args="recipient@example.com recipient@example.com src/test/resources/keys/recipient.gpg.d/pubring.gpg src/test/resources/keys/recipient.gpg.d/secring.gpg recipient /tmp/test.zip.gpg /tmp/reencrypt-out"
+          ls /tmp/reencrypt-out/*.gpg

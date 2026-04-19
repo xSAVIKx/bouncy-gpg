@@ -1,5 +1,9 @@
 ## V 2.x.x (NEXT)
 
+* Enh: Migrate all examples to standalone Maven projects with `local`/`central`/`github` source profiles.
+* Enh: Update examples to `io.github.xsavikx:bouncy-gpg:2.3.3`, Bouncy Castle 1.70, SLF4J 2.0.13, logback 1.5.18.
+* Enh: Add CI jobs to build and run all examples against local install, Maven Central, and GitHub Packages.
+
 ## V 2.3.3 Bug Fixes
 
 * Fix: Fix #58 - NPE when decrypting non-encrypted data.

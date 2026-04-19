@@ -5,14 +5,14 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>io.github.xsavikx</groupId>
-  <artifactId>bouncy-gpg-maven-example</artifactId>
+  <artifactId>bouncy-gpg-encrypt-example</artifactId>
   <version>1.0.0</version>
   <packaging>jar</packaging>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <bouncycastle.version>1.70</bouncycastle.version>
-    <!-- slf4j 2.0.13 flows in transitively via logback-classic; no direct dependency needed -->
+    <slf4j.version>2.0.13</slf4j.version>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
@@ -34,6 +34,11 @@
       <version>${bouncycastle.version}</version>
     </dependency>
     <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+    <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
       <version>1.5.18</version>
@@ -47,7 +52,7 @@
         <artifactId>exec-maven-plugin</artifactId>
         <version>3.2.0</version>
         <configuration>
-          <mainClass>name.neuhalfen.projects.crypto.bouncycastle.openpgp.example.maven.App</mainClass>
+          <mainClass>name.neuhalfen.projects.crypto.bouncycastle.openpgp.example.EncryptMain</mainClass>
         </configuration>
       </plugin>
     </plugins>
