@@ -70,7 +70,7 @@ jobs:
         working-directory: examples/encrypt
         run: |
           echo "Hello bouncy-gpg" > /tmp/hello.txt
-          zip /tmp/test.zip /etc/hostname
+          zip -j /tmp/test.zip /etc/hostname
           mvn compile exec:java -Dexec.args="recipient@example.com recipient@example.com src/test/resources/keys/recipient.gpg.d/pubring.gpg src/test/resources/keys/recipient.gpg.d/secring.gpg recipient /tmp/hello.txt /tmp/hello.txt.gpg"
           mvn compile exec:java -Dexec.args="recipient@example.com recipient@example.com src/test/resources/keys/recipient.gpg.d/pubring.gpg src/test/resources/keys/recipient.gpg.d/secring.gpg recipient /tmp/test.zip /tmp/test.zip.gpg"
 
@@ -109,7 +109,7 @@ jobs:
         working-directory: examples/encrypt
         run: |
           echo "Hello bouncy-gpg" > /tmp/hello.txt
-          zip /tmp/test.zip /etc/hostname
+          zip -j /tmp/test.zip /etc/hostname
           mvn -P central compile exec:java -Dexec.args="recipient@example.com recipient@example.com src/test/resources/keys/recipient.gpg.d/pubring.gpg src/test/resources/keys/recipient.gpg.d/secring.gpg recipient /tmp/hello.txt /tmp/hello.txt.gpg"
           mvn -P central compile exec:java -Dexec.args="recipient@example.com recipient@example.com src/test/resources/keys/recipient.gpg.d/pubring.gpg src/test/resources/keys/recipient.gpg.d/secring.gpg recipient /tmp/test.zip /tmp/test.zip.gpg"
 
@@ -152,7 +152,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "Hello bouncy-gpg" > /tmp/hello.txt
-          zip /tmp/test.zip /etc/hostname
+          zip -j /tmp/test.zip /etc/hostname
           mvn -P github --settings $GITHUB_WORKSPACE/.github/maven-settings.xml compile exec:java -Dexec.args="recipient@example.com recipient@example.com src/test/resources/keys/recipient.gpg.d/pubring.gpg src/test/resources/keys/recipient.gpg.d/secring.gpg recipient /tmp/hello.txt /tmp/hello.txt.gpg"
           mvn -P github --settings $GITHUB_WORKSPACE/.github/maven-settings.xml compile exec:java -Dexec.args="recipient@example.com recipient@example.com src/test/resources/keys/recipient.gpg.d/pubring.gpg src/test/resources/keys/recipient.gpg.d/secring.gpg recipient /tmp/test.zip /tmp/test.zip.gpg"
 
